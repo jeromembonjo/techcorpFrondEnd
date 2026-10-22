@@ -1,4 +1,4 @@
-export interface Employee {}
+
 // Les quatre roles definis par le cahier des charges.
 export type Role = 'employee' | 'manager' | 'hr' | 'admin';
 

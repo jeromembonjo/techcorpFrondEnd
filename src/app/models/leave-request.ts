@@ -1,4 +1,4 @@
-export interface LeaveRequest {}
+
 export type LeaveType = 'paid' | 'rtt' | 'sick' | 'unpaid';
 export type LeaveStatus = 'pending' | 'manager-approved' | 'approved' | 'rejected';
 

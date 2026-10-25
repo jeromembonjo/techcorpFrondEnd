@@ -1,16 +1,18 @@
-import { Component, signal } from '@angular/core';
+import {Component, computed, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Employee } from './models/employee';
-import { LEAVE_TYPE_LABELS, LeaveRequest } from './models/leave-request';
+import {LEAVE_STATUS_LABELS, LEAVE_TYPE_LABELS, LeaveRequest} from './models/leave-request';
 import { Sidebar } from './layout/sidebar/sidebar';
+import {StatCard} from './features/dashboard/stat-card/stat-card';
+import {Topbar} from './layout/topbar/topbar';
 
 @Component({
-  imports: [RouterOutlet, Sidebar],
+  imports: [RouterOutlet, Sidebar, StatCard, Topbar],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
-export class App {
+class App {
   protected readonly title = signal('FrontEndTechCorp');
 
   protected readonly currentUser: Employee = {
@@ -34,4 +36,7 @@ export class App {
   };
 
   protected readonly nextLeaveType = LEAVE_TYPE_LABELS[this.nextLeave.type];
+
 }
+
+export default App

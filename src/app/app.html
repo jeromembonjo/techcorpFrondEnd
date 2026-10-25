@@ -1,4 +1,5 @@
 
+
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
@@ -120,7 +121,7 @@
     border-radius: 2.75rem;
     border: 0;
     transition: background 0.3s ease;
-    font-family: var(--inter-font);
+
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
@@ -184,11 +185,29 @@
     }
   }
 </style>
+<div class="app">
+  <app-topbar [user]="currentUser" initials="CM" />
+  <app-sidebar />
+  <!-- ... -->
 
 <main class="main">
-  <p class="user__name">{{ currentUser.firstName }} {{ currentUser.lastName }}</p>
-  <p class="user__role">{{ currentUser.jobTitle }}</p>
+  <!-- La classe app--nav-open est ajoutee quand navOpen() vaut true. -->
+
+  <ul class="grid-auto list" role="list">
+    <li><app-stat-card label="Congés payés restants" [value]="10" unit="jours" [max]="25" /></li>
+    <li><app-stat-card label="RTT restants" [value]="6" unit="jours" /></li>
+  </ul>
+
+
+
+      <section class="card" aria-labelledby="titre-prochain-conge">
+        <h2 id="titre-prochain-conge">Prochain congé</h2>
+        <p>{{ nextLeaveType }} du {{ nextLeave.startDate }} au {{ nextLeave.endDate }}</p>
+
+      </section>
 </main>
+</div>
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->

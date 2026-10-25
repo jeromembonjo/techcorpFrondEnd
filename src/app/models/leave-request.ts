@@ -18,3 +18,14 @@ export const LEAVE_TYPE_LABELS: Record<LeaveType, string> = {
   sick: 'Maladie',
   unpaid: 'Sans solde',
 };
+
+// Record<LeaveType, string> oblige a fournir un libelle pour chaque type :
+// si un type est ajoute a LeaveType, TypeScript signale le libelle manquant.
+
+
+export const LEAVE_STATUS_LABELS: Record<LeaveStatus, string> = {
+  pending: 'En attente du manager',
+  'manager-approved': 'En attente des RH',
+  approved: 'Validée',
+  rejected: 'Refusée',
+};

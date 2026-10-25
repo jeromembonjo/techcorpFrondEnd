@@ -1,0 +1,16 @@
+<button
+  class="topbar__menu"
+  type="button"
+  aria-controls="navigation"
+  [attr.aria-expanded]="navOpen()"
+  (click)="menuToggle.emit()"
+>
+  <!-- icone SVG inchangee -->
+  <span class="sr-only">Menu</span>
+</button>
+
+<span class="avatar" aria-hidden="true">{{ initials() }}</span>
+<div class="user__info">
+  <p class="user__name">{{ user().firstName }} {{ user().lastName }}</p>
+  <p class="user__role">{{ user().jobTitle }}</p>
+</div>
